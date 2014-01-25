@@ -51,6 +51,7 @@ public class PluginManager : IDisposable
 
     public Assembly createAppDomainAndLoadAssembly(string assemblyFilePath)
     {
+        //replace method with method object.(CreateAppDomainAndLoadAssemblyMo)
         Tuple<Assembly, AppDomain> map = new CreateAppDomainAndLoadAssemblyMo(this).execute(assemblyFilePath);
         this.assemblyDomainMap.Add(map.Item1, map.Item2);
         return map.Item1;
